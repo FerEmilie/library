@@ -2,7 +2,7 @@ var fullDate = new Date();
 var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
 var url = 'https://newsapi.org/v2/everything?' +
-          'q=livre&' +
+          'q=écrivain&' +
           'pageSize=2' +
           'from=' + currentDate +'&' +
           'sortBy=popularity&' +

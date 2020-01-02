@@ -1,0 +1,3 @@
+gestion des livres : ajouter/ supprimer / changer d'étageres => bookcontroller onglet mes livres
+
+a la création d'un utilisateur => engendre une bibliotheque demander le nom, ajouter les livres sur les étageres à partir du stock commun onglet mes livres 
