@@ -9,6 +9,10 @@ use App\Category;
 
 class BookController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
 
   public function create(){
   $categories = Category::all();
@@ -46,14 +50,4 @@ class BookController extends Controller
     return view('books.showAll', ['books' => $books, 'category' => $category, 'i' => $i]);
   }
 
-  public function changeShelf(){
-    
-  }
-
-  // public function delete($id){
-  //     $book = Book::find($id);
-  //     $book->libraries()->detach();
-  //     $book->delete();
-  //     return redirect('/');
-  //   }
 }

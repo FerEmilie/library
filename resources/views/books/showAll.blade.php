@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="col-lg-offset-1 col-lg-12">
+  <div class="col-lg-offset-1 col-lg-12 p-3 mb-2 bg-dark text-white">
         <h1 class="panel-title">DOCK</h1>
-    <table class="overflow-auto table table-dark table-bordered table-striped">
+    <table class="overflow-auto table table-dark table-bordered table-striped text-center">
       <caption>Vous pouvez ici voir les détails des livres et les ajouter à vos étagères</caption>
       <thead>
         <tr>
@@ -24,9 +24,12 @@
             <td>{{ $book->title }}</td>
             <td>{{ $book->author }}</td>
             <td>{{ $book->category->name }}</td>
-            <td id="abstract" data-toggle="tooltip" data-html="true" data-placement="bottom" title="{{ $book->abstract }}">Ici</td>
+            <td id="abstract" data-toggle="tooltip" data-html="true" data-placement="bottom" title="{{ $book->abstract }}"><i class="fa fa-search-plus" aria-hidden="true"></i></td>
             <td>{{ $book->isbn }}</td>
-            <td><a href=""><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>
+            <td><div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/wishList">Je veux</a></button>
+                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/do">J'ai</a></button>
+                </div></td>
 
         </tr>
         @endforeach

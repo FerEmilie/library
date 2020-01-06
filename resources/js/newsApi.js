@@ -2,14 +2,13 @@ var fullDate = new Date();
 var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
 var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + fullDate.getDate();
 var url = 'https://newsapi.org/v2/everything?' +
-          'q=écrivain&' +
+          'q=actualité littérature&' +
           'pageSize=2' +
           'from=' + currentDate +'&' +
           'sortBy=popularity&' +
           'apiKey=e2635dffb5ec4681870242e3bf9fb181';
 
 var req = new Request(url);
-console.log(url);
 var myList = document.getElementById('news');
 fetch(req)
   .then(function(response) {

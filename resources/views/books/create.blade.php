@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="jumbotron jumbotron-fluid">
-  <div class="container col-lg-8">
+
+  <div class="container col-lg-8 p-3 mb-2 bg-dark text-white">
     <h1 class="display-4">Ajouter un nouveau livre</h1>
      <form id="form" class="lead" action="/save" method="post">
        <fieldset>
@@ -49,6 +49,6 @@
       </fieldset>
     </form>
 </div>
-</div>
+
 
 @endsection

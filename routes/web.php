@@ -20,5 +20,3 @@ Route::get('/books/showAll', 'BookController@showAll');
 Route::get('/library', 'LibraryController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
