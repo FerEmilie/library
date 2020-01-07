@@ -11,7 +11,7 @@ class Book extends Model
  */
     public function libraries()
   {
-  return $this->belongsToMany('App\Library');
+  return $this->belongsToMany('App\Library')->withPivot('do');
   }
 
   /**

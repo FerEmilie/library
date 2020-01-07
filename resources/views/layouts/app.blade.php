@@ -69,8 +69,8 @@
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">A lire</a>
-                                <a class="dropdown-item" href="#">Ma liste d'envie</a>
-                                <a class="dropdown-item" href="#">Mes livres</a>
+                                <a class="dropdown-item" href="/library/showWishList">Ma liste d'envie</a>
+                                <a class="dropdown-item" href="/library/showOwn">Mes livres</a>
                               </div>
                             </li>
                             <li class="nav-item dropdown">

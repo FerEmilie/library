@@ -17,6 +17,9 @@ Route::post('/save', 'BookController@save');
 
 Route::get('/books/showAll', 'BookController@showAll');
 
-Route::get('/library', 'LibraryController@index');
+Route::get('/library/showWishList', 'LibraryController@showWishList');
+Route::get('/library/showOwn', 'LibraryController@showOwn');
+Route::get('/library/do/{id}', 'LibraryController@changeShelfDo');
+Route::get('/library/wish/{id}', 'LibraryController@changeShelfWish');
 
 Auth::routes();

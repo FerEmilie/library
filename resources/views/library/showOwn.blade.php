@@ -2,9 +2,9 @@
 
 @section('content')
   <div class="col-lg-offset-1 col-lg-12 p-3 mb-2 bg-dark text-white">
-        <h1 class="panel-title">DOCK</h1>
+        <h1 class="panel-title">Mes livres</h1>
     <table class="overflow-auto table table-dark table-bordered table-striped text-center">
-      <caption>Vous pouvez ici voir les détails des livres et les ajouter à vos étagères</caption>
+      <caption>Vous pouvez ici voir les détails des livres</caption>
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -13,7 +13,7 @@
           <th scope="col">Catégorie</th>
           <th scope="col">Résumé</th>
           <th scope="col">ISBN</th>
-          <th scope="col">Ajouter à mes étagères</th>
+          <th scope="col">Gestion</th>
         </tr>
       </thead>
         <tbody>
@@ -27,8 +27,7 @@
             <td id="abstract" data-toggle="tooltip" data-html="true" data-placement="bottom" title="{{ $book->abstract }}"><i class="fa fa-search-plus" aria-hidden="true"></i></td>
             <td>{{ $book->isbn }}</td>
             <td><div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/wish/{{ $book->id }}">Je veux</a></button>
-                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/do/{{ $book->id }}">J'ai</a></button>
+                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/delete">Supprimer</a></button>
                 </div></td>
 
         </tr>

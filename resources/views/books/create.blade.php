@@ -26,9 +26,9 @@
               <label for="do">Le mettre sur quelle étagère ?</label>
               <select name="do" id="do" class="form-control" required="required">
                 <option></option>
-                <option>A lire</option>
-                <option>Ma liste d'envie</option>
-                <option>Mes livres</option>
+                <option value="1">A lire</option>
+                <option value="2">Ma liste d'envie</option>
+                <option value="3">Mes livres</option>
               </select>
              </div>
             <div class="form-group col-md-4">
