@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Library extends Model
 {
-  protected $fillable = ['name'];
+  protected $fillable = ['name', 'id'];
 
   /**
  * Get the books on the library.

@@ -16,6 +16,10 @@ class LibraryController extends Controller
       $this->middleware('auth');
   }
 
+  /**
+   * Display the wish list of the current user.
+   *
+   */
   public function showWishList(){
     $i = 1;
     $books = Book::join('book_library', 'book_library.book_id', '=', 'books.id')
@@ -27,6 +31,10 @@ class LibraryController extends Controller
     return view('library.showWishList', ['books' => $books, 'i' => $i]);
   }
 
+  /**
+   * Display the list of books owned by the current user.
+   *
+   */
   public function showOwn(){
     $i = 1;
     $books = Book::join('book_library', 'book_library.book_id', '=', 'books.id')
@@ -38,30 +46,39 @@ class LibraryController extends Controller
     return view('library.showOwn', ['books' => $books, 'i' => $i]);
   }
 
+  /**
+   * Add book on the wish list of the current user.
+   *
+   */
   public function changeShelfWish($id){
-    $book = Book::find($id)->libraries()->where('libraries.user_id', '=', Auth::user()->id);
-    $library = Library::find('id')->where('libraries.user_id', '=', Auth::user()->id);
-    $library_id_parsed = intval(json_decode($library));
-    dd($library_id_parsed);
-    $book->book_id = $id;
-    $book->library_id = $library_id_parsed ;
-
-    $book->do = 0;
-    $book->save();
-    return redirect('/books');
+    $library = Library::find(Auth::user()->library->id);
+    $do = ['do'=> 0];
+    $library->books()->attach($id, $do);
+    return redirect('/library/showWishList');
   }
 
+  /**
+   * Add book on the own list of the current user.
+   *
+   */
   public function changeShelfDo($id){
-    $book = Book::find($id);
-    $book->do = 1;
-    $book->save();
-    return redirect('/books');
+    $library = Library::find(Auth::user()->library->id);
+    $do = ['do'=> 1];
+    try {
+        $library->books()->attach($id, $do);
+    } catch (\Exception $e) {
+        $library->books()->updateExistingPivot($id, $do);
+    }
+    return redirect('/library/showOwn');
   }
 
-  // public function delete($id){
-  //     $book = Book::find($id);
-  //     $book->libraries()->detach();
-  //     $book->delete();
-  //     return redirect('/');
-  //   }
+  /**
+   * Delete the book on the library of the current user.
+   *
+   */
+  public function delete($id){
+      $library = Library::find(Auth::user()->library->id);
+      $library->books()->detach($id);
+      return redirect('/');
+    }
 }

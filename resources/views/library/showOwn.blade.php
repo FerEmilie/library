@@ -27,7 +27,7 @@
             <td id="abstract" data-toggle="tooltip" data-html="true" data-placement="bottom" title="{{ $book->abstract }}"><i class="fa fa-search-plus" aria-hidden="true"></i></td>
             <td>{{ $book->isbn }}</td>
             <td><div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/delete">Supprimer</a></button>
+                  <button type="button" class="btn btn-secondary"><a class="text-reset text-decoration-none" href="/library/delete/{{ $book->id }}">Supprimer</a></button>
                 </div></td>
 
         </tr>
