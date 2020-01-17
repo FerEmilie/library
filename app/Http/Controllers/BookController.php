@@ -14,11 +14,19 @@ class BookController extends Controller
       $this->middleware('auth');
   }
 
+  /**
+   * Return the view with form create.
+   *
+   */
   public function create(){
   $categories = Category::all();
   return view('books.create', ['categories' => $categories]);
  }
 
+ /**
+  * Save form.
+  *
+  */
   public function save(Request $request){
     $this->validate($request, [
         'title' => 'required|max:55',
@@ -41,6 +49,10 @@ class BookController extends Controller
     return redirect('/books/showAll');
   }
 
+  /**
+   * Display books's database.
+   *
+   */
   public function showAll(){
     $i = 1;
     $books = Book::all();

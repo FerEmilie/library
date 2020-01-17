@@ -31,7 +31,7 @@
             <div class="form-group col-md-6">
               <label for="disabledSelect">Le mettre sur quelle étagère ?</label>
               <select name="do" id="disabledSelect" class="form-control" required="required" disabled>
-                <option>Menu desactivé</option>
+                <option>Option desactivée</option>
               </select>
              </div>
 
